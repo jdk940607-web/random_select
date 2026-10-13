@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>발표자 뽑기</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="app__title">발표자 뽑기</h1>
+      <p class="app__subtitle">초등학교 수업용</p>
+    </header>
+
+    <section class="result" aria-live="polite" aria-atomic="true">
+      <p class="result__label">오늘의 발표자</p>
+      <p class="result__name" id="resultName">발표자를 뽑아주세요</p>
+    </section>
+
+    <section class="add" aria-labelledby="addTitle">
+      <h2 id="addTitle" class="add__title">학생 추가</h2>
+      <form class="add__form" id="addForm" autocomplete="off">
+        <label class="add__label" for="nameInput">학생 이름</label>
+        <input
+          class="add__input"
+          type="text"
+          id="nameInput"
+          name="nameInput"
+          placeholder="이름을 입력하세요"
+          maxlength="20"
+          autocomplete="off">
+        <button class="btn btn--primary add__btn" type="submit">추가</button>
+      </form>
+    </section>
+
+    <section class="list" aria-labelledby="listTitle">
+      <div class="list__head">
+        <h2 id="listTitle" class="list__title">학생 목록</h2>
+        <span class="list__count" id="studentCount" aria-live="polite">0명</span>
+      </div>
+      <ul class="list__items" id="studentList" role="list"></ul>
+      <p class="list__empty" id="emptyMsg" hidden>등록된 학생이 없습니다.</p>
+    </section>
+
+    <section class="actions" aria-label="발표자 뽑기 및 초기화">
+      <button class="btn btn--accent actions__pick" id="pickBtn" type="button">발표자 뽑기</button>
+      <button class="btn btn--soft actions__reset" id="resetBtn" type="button">전체 초기화</button>
+    </section>
+  </main>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
